@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Something Hacks</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/style10.css" />
+		<script src="js/snap.svg-min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/segment.min.js"></script>
+		<script src="js/ease.min.js"></script>
+		<style>
+			#menu {
+			    background-image: url('img/burgerButton.png');
+			    background-color: transparent;
+			    border: none;
+			    background-size: 48px 48px;
+			    height: 50px;
+			    width: 50px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="st-container" class="">
+			<!--
+				example menus
+				these menus will be on top of the push wrapper
+			-->
+			<nav class="st-menu st-effect-9" id="menu-9">
+				<h2 class="icon icon-lab">Menu</h2>
+				<ul>
+					<li><a class="icon icon-data" href="sidebar.html">Purchase</a></li>
+					<li><a class="icon icon-location" href="monitor.html">Monitoring</a></li>
+					<li><a class="icon icon-location" href="index.html">Logout</a></li>
+				</ul>
+			</nav>
+			<!-- content push wrapper -->
+			<div class="st-pusher">
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+
+						<div class="main clearfix">
+							<div id="st-trigger-effects" class="column">
+
+								<button id="menu" data-effect="st-effect-9"></button>
+
+							</div>
+
+							<div class="container">
+								<!-- Top Navigation -->
+							<!-- 	<header class="codrops-header">
+									<h1>Something Hack<span>Making valuable contributions to the community!</span></h1>
+									<nav class="codrops-demos">
+										<a href="index.html">Swipe right</a>
+										<a href="index2.html">Swipe Down</a>
+										<a class="current-demo" href="index3.html">Rotate</a>
+									</nav>
+								</header> -->
+								<section class="grid-wrap">
+									<ul class="grid swipe-rotate" id="grid">
+										<li class="title-box">
+											<h2>Available Infrastructure Opportunties</h2>
+										</li>
+										<li><a id ="trigger-overlay" href="#"><img src="img/dummy1.png" alt="dummy"><h3>Water Infrastructure</h3></a></li>
+										<li><a href="#"><img src="img/dummy2.png" alt="dummy"><h3>Cleaner Air</h3></a></li>
+										<li><a href="#"><img src="img/dummy3.png" alt="dummy"><h3>Highways</h3></a></li>
+										<li><a href="#"><img src="img/dummy4.png" alt="dummy"><h3>Street Repavement</h3></a></li>
+										<li><a href="#"><img src="img/dummy5.png" alt="dummy"><h3>Parks and Recreation</h3></a></li>
+										<li><a href="#"><img src="img/dummy6.png" alt="dummy"><h3>Solar Infrastructure</h3></a></li>
+										<li><a href="#"><img src="img/dummy7.png" alt="dummy"><h3>Community Services</h3></a></li>
+										<li><a href="#"><img src="img/dummy8.png" alt="dummy"><h3>Desalinization</h3></a></li>
+										<li><a href="#"><img src="img/dummy9.png" alt="dummy"><h3>Affordable Housing</h3></a></li>
+										<li><a href="#"><img src="img/dummy10.png" alt="dummy"><h3>Trash and Compost</h3></a></li>
+										<li><a href="#"><img src="img/dummy11.png" alt="dummy"><h3>Small Business</h3></a></li>
+										<li><a href="#"><img src="img/dummy12.png" alt="dummy"><h3>Education</h3></a></li>
+										<li><a href="#"><img src="img/dummy13.png" alt="dummy"><h3>Healthcare</h3></a></li>
+										<li><a href="#"><img src="img/dummy14.png" alt="dummy"><h3>Public Transportation</h3></a></li>
+										<li><a href="#"><img src="img/dummy15.png" alt="dummy"><h3>Misc</h3></a></li>
+										<li class="title-box">
+											<a href="#grid"><h2>Back to Top</h2>
+										</li>
+									</ul>
+								</section>
+
+						</div><!-- /main -->
+								<div class="overlay overlay-boxes">
+									<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="101%" viewBox="0 0 1440 806" preserveAspectRatio="none">
+										<path d="m0.005959,200.364029l207.551124,0l0,204.342453l-207.551124,0l0,-204.342453z"/>
+										<path d="m0.005959,400.45401l207.551124,0l0,204.342499l-207.551124,0l0,-204.342499z"/>
+										<path d="m0.005959,600.544067l207.551124,0l0,204.342468l-207.551124,0l0,-204.342468z"/>
+										<path d="m205.752151,-0.36l207.551163,0l0,204.342437l-207.551163,0l0,-204.342437z"/>
+										<path d="m204.744629,200.364029l207.551147,0l0,204.342453l-207.551147,0l0,-204.342453z"/>
+										<path d="m204.744629,400.45401l207.551147,0l0,204.342499l-207.551147,0l0,-204.342499z"/>
+										<path d="m204.744629,600.544067l207.551147,0l0,204.342468l-207.551147,0l0,-204.342468z"/>
+										<path d="m410.416046,-0.36l207.551117,0l0,204.342437l-207.551117,0l0,-204.342437z"/>
+										<path d="m410.416046,200.364029l207.551117,0l0,204.342453l-207.551117,0l0,-204.342453z"/>
+										<path d="m410.416046,400.45401l207.551117,0l0,204.342499l-207.551117,0l0,-204.342499z"/>
+										<path d="m410.416046,600.544067l207.551117,0l0,204.342468l-207.551117,0l0,-204.342468z"/>
+										<path d="m616.087402,-0.36l207.551086,0l0,204.342437l-207.551086,0l0,-204.342437z"/>
+										<path d="m616.087402,200.364029l207.551086,0l0,204.342453l-207.551086,0l0,-204.342453z"/>
+										<path d="m616.087402,400.45401l207.551086,0l0,204.342499l-207.551086,0l0,-204.342499z"/>
+										<path d="m616.087402,600.544067l207.551086,0l0,204.342468l-207.551086,0l0,-204.342468z"/>
+										<path d="m821.748718,-0.36l207.550964,0l0,204.342437l-207.550964,0l0,-204.342437z"/>
+										<path d="m821.748718,200.364029l207.550964,0l0,204.342453l-207.550964,0l0,-204.342453z"/>
+										<path d="m821.748718,400.45401l207.550964,0l0,204.342499l-207.550964,0l0,-204.342499z"/>
+										<path d="m821.748718,600.544067l207.550964,0l0,204.342468l-207.550964,0l0,-204.342468z"/>
+										<path d="m1027.203979,-0.36l207.550903,0l0,204.342437l-207.550903,0l0,-204.342437z"/>
+										<path d="m1027.203979,200.364029l207.550903,0l0,204.342453l-207.550903,0l0,-204.342453z"/>
+										<path d="m1027.203979,400.45401l207.550903,0l0,204.342499l-207.550903,0l0,-204.342499z"/>
+										<path d="m1027.203979,600.544067l207.550903,0l0,204.342468l-207.550903,0l0,-204.342468z"/>
+										<path d="m1232.659302,-0.36l207.551147,0l0,204.342437l-207.551147,0l0,-204.342437z"/>
+										<path d="m1232.659302,200.364029l207.551147,0l0,204.342453l-207.551147,0l0,-204.342453z"/>
+										<path d="m1232.659302,400.45401l207.551147,0l0,204.342499l-207.551147,0l0,-204.342499z"/>
+										<path d="m1232.659302,600.544067l207.551147,0l0,204.342468l-207.551147,0l0,-204.342468z"/>
+										<path d="m-0.791443,-0.360001l207.551163,0l0,204.342438l-207.551163,0l0,-204.342438z"/>
+									</svg>
+									<button type="button" class="overlay-close">Close</button>
+
+									<nav>
+										<ul>
+											<li><a href="sidebar.html">Home</a></li>
+											<li><a href="purchase.html">Purchase</a></li>
+											<li><a href="">Currently you have $0 in this investment</a></li>
+										</ul>
+
+									</nav>
+
+								</div>
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+				<!-- open/close -->
+
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/colorfinder-1.1.js"></script>
+		<script src="js/gridScrollFx.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/demo10.js"></script>
+		<script>
+			new GridScrollFx( document.getElementById( 'grid' ), {
+				viewportFactor : 0.4
+			} );
+		</script>
+	</body>
+</html>

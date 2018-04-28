@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Something Hacks</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/style10.css" />
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/snap.svg-min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/segment.min.js"></script>
+		<script src="js/ease.min.js"></script>
+		<style>
+			#menu {
+			    background-image: url('img/burgerButton.png');
+			    background-color: transparent;
+			    border: none;
+			    background-size: 48px 48px;
+			    height: 50px;
+			    width: 50px;
+			}
+		</style>
+		<body>
+
+		<div id="st-container" class="">
+			<!--
+				example menus
+				these menus will be on top of the push wrapper
+			-->
+			<nav class="st-menu st-effect-9" id="menu-9">
+				<h2 class="icon icon-lab">Menu</h2>
+				<ul>
+					<li><a class="icon icon-data" href="main.html">Purchase</a></li>
+					<li><a class="icon icon-location" href="monitor.html">Monitoring</a></li>
+					<li><a class="icon icon-location" href="index.html">Logout</a></li>
+				</ul>
+			</nav>
+			<!-- content push wrapper -->
+			<div class="st-pusher">
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+
+						<div class="main clearfix">
+							<div id="st-trigger-effects" class="column">
+
+								<button id="menu" data-effect="st-effect-9"></button>
+
+							</div>
+								  <div class="box">
+									<div id="left">
+										<h2>Purchase Price</h2>
+										<div style="background: white; height: 39px;">
+											<input width="60px" id="range" type="text" value="$100,000" onfocus="this.select(); this.selAll=1;" onkeyup="changedPP(this.value)">
+										</div>
+										<input type="range" min="30000" max="1000000" step="5000" value="100000" onchange="showPurchase(this.value)" />
+									</div>
+
+									<div id="left">
+										<h2>Initial Payment</h2>
+										<div>
+											<div style="background: white; height: 39px;width: 30%;float:left;">
+												<input id="range2" type="text" value="15 %" onkeyup="changedDP(this.value)" onchange="focusoutDP(this.value)">
+											</div>
+											<div style="background: white; height: 39px;width: 65%;float:right;">
+												<input id="range3" type="text" value="$4,500" onfocus="this.select(); this.selAll=1;" onkeyup="changedDPV(this.value)">
+											</div>
+										</div>
+										<input type="range" min="1" max="100" value="15" onchange="showDownPay(this.value)" />
+									</div>
+									<br clear="left"/>
+
+									<div id="left">
+										<h2>Bond Term</h2>
+
+										<div style="margin-top:25px;">
+											<div style="text-align:left;width:120px;max-width:120px;display:inline;">
+												<div style="margin-top:-5px;float:left;margin-right:10px;">
+													<input type="radio" onchange="verify()" class="styled" checked="checked" id="m1" name="mortgage" value="30"><label id="label30" for="m1"></label>
+												</div><span style="color:white;float:left;">30 year</span>
+											</div>
+
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<div style="text-align:left;max-width:120px;display:inline;">
+												<div style="margin-top:-5px;float:left;margin-left:25px;margin-right:10px;">
+													<input type="radio" onchange="verify()" class="styled" id="m2" name="mortgage" value="15"><label id="label15" for="m2"></label>
+												</div><span style="color:white;float:left;">15 year</span>
+											</div>
+									    </div>
+									</div>
+
+									<div id="left">
+										<h2>Estimated Interest Rate</h2>
+										<div style="background: white; height: 39px;">
+											<input id="interest" type="text" value="4 %" onkeypress="enterCheck()" onchange="focusoutIR(this.value)">
+										</div>
+										<input type="range" min="1.0" max="10.0" value="4" step=".5" onchange="changedIR(this.value)" />
+										<br/><br/><br/>
+									</div>
+									<br clear="left"/>
+
+									<div id="calc">
+										<span style="color:white;">Estimated Return:</span>
+									</div>
+
+									<div id="bot">
+										<span id="range4" style="color:white;">$121.74</span>
+									</div>
+								</div>
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+				<!-- open/close -->
+
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/colorfinder-1.1.js"></script>
+		<script src="js/gridScrollFx.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/demo10.js"></script>
+		<script  src="js/index.js"></script>
+		<script>
+			new GridScrollFx( document.getElementById( 'grid' ), {
+				viewportFactor : 0.4
+			} );
+		</script>
+	</body>
+</html>

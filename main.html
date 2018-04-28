@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Something Hacks</title>
+		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/style10.css" />
+		<link rel="stylesheet" type="text/css" href="css/checkout-sidebar.css" />
+
+		<script src="js/snap.svg-min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/segment.min.js"></script>
+		<script src="js/ease.min.js"></script>
+		<style>
+			#menu {
+			    background-image: url('img/burgerButton.png');
+			    background-color: transparent;
+			    border: none;
+			    background-size: 48px 48px;
+			    height: 50px;
+			    width: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="md-modal md-effect-1" id="modal-1">
+			<div class="md-content">
+				<h3>Water Infrastructure</h3>
+				<div>
+					<p>Water infrastructure is important to sustain good water for communities. Currently invested: $0</p>
+					<h2>Support Amount</h2>
+					<div style="height: 39px;">
+						<input width="60px" id="range" type="text" value="$10,000" onfocus="this.select(); this.selAll=1;" onkeyup="changedPP(this.value)">
+					</div>
+					<a href="monitor.html" style="color:white;"><h2>Purchase</h2></a>
+							<div class="checkout">
+								<a class="checkout__button" href="#">Breakdown</a>
+								<div class="checkout__order">
+									<div class="checkout__order-inner">
+										<table class="checkout__summary">
+											<thead>
+										        <tr><th>Projects</th><th>Price</th></tr>
+										    </thead>
+										    <tbody>
+
+												<tr><td><input type="radio" name="one"><strong>    Inital Funding</strong> <span>All</span></td><td>$990</td></tr>
+												<tr><td><input type="radio" name="two"><strong>     Water Treatment </strong> <span>San Francsico</span></td><td>$550</td></tr>
+												<tr><td><input type="radio" name="three"><strong>     Logistics</strong> <span>San Francisco</span></td><td>$1100</td></tr>
+												<tr><td><input type="radio" name="four"><strong>     General</strong> <span>San Francisco</span></td><td>$1990</td></tr>
+											</tbody>
+										</table><!-- /checkout__summary -->
+										<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Close</button>
+									</div><!-- /checkout__order-inner -->
+								</div><!-- /checkout__order -->
+							</div><!-- /checkout -->
+				</div>
+			</div>
+		</div>
+
+		<div id="st-container" class="">
+			<!--
+				example menus
+				these menus will be on top of the push wrapper
+			-->
+			<nav class="st-menu st-effect-9" id="menu-9">
+				<h2 style="color:white;">Menu</h2>
+				<ul>
+					<li><img src= "img/dummy2.png" style = "height:100px; display:block; margin:auto;"></li>
+					<p style = "text-align: center;"> Kent Makishima </p>
+					<li><a class="icon icon-data" href="main.html">Purchase</a></li>
+					<li><a class="icon icon-location" href="monitor.html">Monitoring</a></li>
+					<li><a class="icon icon-location" href="#">Tax Forms</a></li>
+					<li><a class="icon icon-location" href="index.html">Logout</a></li>
+				</ul>
+			</nav>
+			<!-- content push wrapper -->
+			<div class="st-pusher">
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<!-- Top Navigation -->
+
+						<div class="main clearfix">
+							<div id="st-trigger-effects" class="column">
+
+								<button id="menu" data-effect="st-effect-9"></button>
+
+							</div>
+
+							<div class="container">
+								<!-- Top Navigation -->
+<!-- 								<header class="codrops-header">
+									<h1 style="color:black">Welcome Back Kent</h1>
+								</header> -->
+								<section class="grid-wrap">
+									<ul class="grid swipe-rotate" id="grid">
+										<li class="title-box">
+											<h2>Available Infrastructure Opportunties</h2>
+										</li>
+										<li><a class="md-trigger" data-modal="modal-1" href="#"><img src="img/dummy1.png" alt="dummy"><h3>Water Infrastructure</h3></a></li>
+										<li><a href="#"><img src="img/dummy2.png" alt="dummy"><h3>Cleaner Air</h3></a></li>
+										<li><a href="#"><img src="img/dummy3.png" alt="dummy"><h3>Highways</h3></a></li>
+										<li><a href="#"><img src="img/dummy4.png" alt="dummy"><h3>Street Repavement</h3></a></li>
+										<li><a href="#"><img src="img/dummy5.png" alt="dummy"><h3>Parks and Recreation</h3></a></li>
+										<li><a href="#"><img src="img/dummy6.png" alt="dummy"><h3>Solar Infrastructure</h3></a></li>
+										<li><a href="#"><img src="img/dummy7.png" alt="dummy"><h3>Community Services</h3></a></li>
+										<li><a href="#"><img src="img/dummy8.png" alt="dummy"><h3>Desalinization</h3></a></li>
+										<li><a href="#"><img src="img/dummy9.png" alt="dummy"><h3>Affordable Housing</h3></a></li>
+										<li><a href="#"><img src="img/dummy10.png" alt="dummy"><h3>Trash and Compost</h3></a></li>
+										<li><a href="#"><img src="img/dummy11.png" alt="dummy"><h3>Small Business</h3></a></li>
+										<li><a href="#"><img src="img/dummy12.png" alt="dummy"><h3>Education</h3></a></li>
+										<li><a href="#"><img src="img/dummy13.png" alt="dummy"><h3>Healthcare</h3></a></li>
+										<li><a href="#"><img src="img/dummy14.png" alt="dummy"><h3>Public Transportation</h3></a></li>
+										<li><a href="#"><img src="img/dummy15.png" alt="dummy"><h3>Misc</h3></a></li>
+										<li class="title-box">
+											<a href="#grid"><h2>Back to Top</h2>
+										</li>
+									</ul>
+								</section>
+
+						</div><!-- /main -->
+						<div class="md-overlay"></div><!-- the overlay element -->
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+				<!-- open/close -->
+
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/colorfinder-1.1.js"></script>
+		<script src="js/gridScrollFx.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/demo10.js"></script>
+		<script src="js/modalEffects.js"></script>
+		<script>
+			new GridScrollFx( document.getElementById( 'grid' ), {
+				viewportFactor : 0.4
+			} );
+		</script>
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="js/cssParser.js"></script>
+		<script src="js/css-filters-polyfill.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( '.checkout' ) ).forEach( function( el ) {
+					var openCtrl = el.querySelector( '.checkout__button' ),
+						closeCtrls = el.querySelectorAll( '.checkout__cancel' );
+
+					openCtrl.addEventListener( 'click', function(ev) {
+						ev.preventDefault();
+						classie.add( el, 'checkout--active' );
+					} );
+
+					[].slice.call( closeCtrls ).forEach( function( ctrl ) {
+						ctrl.addEventListener( 'click', function() {
+							classie.remove( el, 'checkout--active' );
+						} );
+					} );
+				} );
+			})();
+		</script>
+	</body>
+</html>
