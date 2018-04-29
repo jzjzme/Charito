@@ -2,8 +2,8 @@
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Something Hacks</title>
 		<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
 		<meta name="keywords" content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/style10.css" />
 		<link rel="stylesheet" type="text/css" href="css/checkout-sidebar.css" />
+		<style type="text/css">#answer1, #answer2, #answer3, #answer4 {display: none;}</style>
 
 		<script src="js/snap.svg-min.js"></script>
 		<script src="js/modernizr.custom.js"></script>
@@ -26,51 +27,146 @@
 			    background-color: transparent;
 			    border: none;
 			    background-size: 48px 48px;
-			    height: 50px;
+			    height: 50px;  
 			    width: 50px;
+			}		
+			.progress {
+			  margin: 20px auto;
+			  text-align: center;
+			}
+			.progress .circle,
+			.progress .bar {
+			  display: inline-block;
+			  background: #fff;
+			  width: 40px; height: 40px;
+			  border-radius: 40px;
+			  border: 1px solid #d5d5da;
+			}
+			.progress .bar {
+			  position: relative;
+			  width: 80px;
+			  height: 6px;
+			  top: -33px;
+			  margin-left: -5px;
+			  margin-right: -5px;
+			  border-left: none;
+			  border-right: none;
+			  border-radius: 0;
+			}
+			.progress .circle .label {
+			  display: inline-block;
+			  width: 32px;
+			  height: 32px;
+			  line-height: 32px;
+			  border-radius: 32px;
+			  margin-top: 3px;
+			  color: #b5b5ba;
+			  font-size: 17px;
+			}
+			.progress .circle .title {
+			  color: #b5b5ba;
+			  font-size: 13px;
+			  line-height: 30px;
+			  margin-left: -5px;
+			}
+
+			/* Done / Active */
+			.progress .bar.done,
+			.progress .circle.done {
+			  background: #eee;
+			}
+			.progress .bar.active {
+			  background: linear-gradient(to right, #EEE 40%, #FFF 60%);
+			}
+			.progress .circle.done .label {
+			  color: #FFF;
+			  background: #8bc435;
+			  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+			}
+			.progress .circle.done .title {
+			  color: #444;
+			}
+			.progress .circle.active .label {
+			  color: #FFF;
+			  background: #0c95be;
+			  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+			}
+			.progress .circle.active .title {
+			  color: #0c95be;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="md-modal md-effect-1" id="modal-1">
 			<div class="md-content">
-				<h3>Water Infrastructure</h3>
+				<h3>Affordable Housing</h3>
 				<div>
-					<p>Water infrastructure is important to sustain good water for communities. Currently invested: $0</p>
-					<h2>Support Amount</h2>
-					<div style="height: 39px;">
-						<input width="60px" id="range" type="text" value="$10,000" onfocus="this.select(); this.selAll=1;" onkeyup="changedPP(this.value)">
-					</div>
-					<a href="monitor.html" style="color:white;"><h2>Purchase</h2></a>
-							<div class="checkout">
-								<a class="checkout__button" href="#">Breakdown</a>
-								<div class="checkout__order">
-									<div class="checkout__order-inner">
-										<table class="checkout__summary">
-											<thead>
-										        <tr><th>Projects</th><th>Price</th></tr>
-										    </thead>
-										    <tbody>
+					<p>Providing affordable housing opportunities for low-income and homeless individuals</p>
+					<div class ="container question" id="answer">
 
-												<tr><td><input type="radio" name="one"><strong>    Inital Funding</strong> <span>All</span></td><td>$990</td></tr>
-												<tr><td><input type="radio" name="two"><strong>     Water Treatment </strong> <span>San Francsico</span></td><td>$550</td></tr>
-												<tr><td><input type="radio" name="three"><strong>     Logistics</strong> <span>San Francisco</span></td><td>$1100</td></tr>
-												<tr><td><input type="radio" name="four"><strong>     General</strong> <span>San Francisco</span></td><td>$1990</td></tr>
-											</tbody>
-										</table><!-- /checkout__summary -->
-										<button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Close</button>
-									</div><!-- /checkout__order-inner -->
-								</div><!-- /checkout__order -->
-							</div><!-- /checkout -->
+					  <div class="new_member_box"> 
+					      <a href="#" class="question1"><h4 style="color:white;">General Funding</h4></a>
+					  </div>
+
+					  <div class="new_member_box"> 
+					      <a href="#" class="question2"><h4 style="color:white;">Local Housing</h4></a>
+					  </div>
+
+					  <div class="new_member_box"> 
+					      <a href="#" class="question3"><h4 style="color:white;">Staffing</h4></a>
+					  </div>
+					  <div class="new_member_box"> 
+					      <a href="#" class="question4"><h4 style="color:white;">Outreach</h4></a>
+					  </div>
+					</div>
+					  
+					<div class="clear" class="question"></div>
+
+					<div id="answer2"><h4 style="color:white;">Local Housing</h4>
+						<div class = "container">
+							<div class="progress">
+							  <div class="circle done">
+							    <span class="label">1</span>
+							    <span class="title">Funding</span>
+							  </div>
+							  <span class="bar done"></span>
+							  <div class="circle done">
+							    <span class="label">2</span>
+							    <span class="title">Operations</span>
+							  </div>
+							  <span class="bar half"></span>
+							  <div class="circle active">
+							    <span class="label">3</span>
+							    <span class="title">Phase1</span>
+							  </div>
+							  <span class="bar"></span>
+							  <div class="circle">
+							    <span class="label">4</span>
+							    <span class="title">Phase2</span>
+							  </div>
+							  <span class="bar"></span>
+							  <div class="circle">
+							    <span class="label">5</span>
+							    <span class="title">Finish</span>
+							  </div>
+							</div>
+						</div>
+						<p>Need $10000 to finish funding phase</p>
+						<button><a href="monitor.html">Support Now</a></button>
+						<button>Custom Amount</button>
+					</div>
+					<div id="answer1">Lorem</div>
+					<div id="answer3">Lorem</div>
+					<div id="answer4">Lorem</div>
 				</div>
 			</div>
 		</div>
 
 		<div id="st-container" class="">
-			<!--
-				example menus
+			<!-- 	
+				example menus 
 				these menus will be on top of the push wrapper
-			-->
+			-->			
 			<nav class="st-menu st-effect-9" id="menu-9">
 				<h2 style="color:white;">Menu</h2>
 				<ul>
@@ -78,7 +174,7 @@
 					<p style = "text-align: center;"> Kent Makishima </p>
 					<li><a class="icon icon-data" href="main.html">Purchase</a></li>
 					<li><a class="icon icon-location" href="monitor.html">Monitoring</a></li>
-					<li><a class="icon icon-location" href="#">Tax Forms</a></li>
+					<li><a class="icon icon-location" href="tax.pdf">Tax Forms</a></li>
 					<li><a class="icon icon-location" href="index.html">Logout</a></li>
 				</ul>
 			</nav>
@@ -98,23 +194,23 @@
 							<div class="container">
 								<!-- Top Navigation -->
 <!-- 								<header class="codrops-header">
-									<h1 style="color:black">Welcome Back Kent</h1>
+									<h1 style="color:black">Welcome Back Kent</h1>	
 								</header> -->
 								<section class="grid-wrap">
 									<ul class="grid swipe-rotate" id="grid">
 										<li class="title-box">
 											<h2>Available Infrastructure Opportunties</h2>
 										</li>
-										<li><a class="md-trigger" data-modal="modal-1" href="#"><img src="img/dummy1.png" alt="dummy"><h3>Water Infrastructure</h3></a></li>
-										<li><a href="#"><img src="img/dummy2.png" alt="dummy"><h3>Cleaner Air</h3></a></li>
-										<li><a href="#"><img src="img/dummy3.png" alt="dummy"><h3>Highways</h3></a></li>
-										<li><a href="#"><img src="img/dummy4.png" alt="dummy"><h3>Street Repavement</h3></a></li>
-										<li><a href="#"><img src="img/dummy5.png" alt="dummy"><h3>Parks and Recreation</h3></a></li>
-										<li><a href="#"><img src="img/dummy6.png" alt="dummy"><h3>Solar Infrastructure</h3></a></li>
-										<li><a href="#"><img src="img/dummy7.png" alt="dummy"><h3>Community Services</h3></a></li>
-										<li><a href="#"><img src="img/dummy8.png" alt="dummy"><h3>Desalinization</h3></a></li>
-										<li><a href="#"><img src="img/dummy9.png" alt="dummy"><h3>Affordable Housing</h3></a></li>
-										<li><a href="#"><img src="img/dummy10.png" alt="dummy"><h3>Trash and Compost</h3></a></li>
+										<li><a class="md-trigger" data-modal="modal-1" href="#"><img src="img/dummy1.png" alt="dummy"><h3>Affordable Housing</h3></a></li>
+										<li><a href="#"><img src="img/dummy2.png" alt="dummy"><h3>Food</h3></a></li>
+										<li><a href="#"><img src="img/dummy3.png" alt="dummy"><h3>Hygiene</h3></a></li>
+										<li><a href="#"><img src="img/dummy4.png" alt="dummy"><h3>Clothing</h3></a></li>
+										<li><a href="#"><img src="img/dummy5.png" alt="dummy"><h3>Work</h3></a></li>
+										<li><a href="#"><img src="img/dummy6.png" alt="dummy"><h3>Health Wellness</h3></a></li>
+										<li><a href="#"><img src="img/dummy7.png" alt="dummy"><h3>Emergency Care</h3></a></li>
+										<li><a href="#"><img src="img/dummy8.png" alt="dummy"><h3>Veterans</h3></a></li>
+										<li><a href="#"><img src="img/dummy9.png" alt="dummy"><h3>Emergency Care</h3></a></li>
+										<li><a href="#"><img src="img/dummy10.png" alt="dummy"><h3>Solar Infrastructure</h3></a></li>
 										<li><a href="#"><img src="img/dummy11.png" alt="dummy"><h3>Small Business</h3></a></li>
 										<li><a href="#"><img src="img/dummy12.png" alt="dummy"><h3>Education</h3></a></li>
 										<li><a href="#"><img src="img/dummy13.png" alt="dummy"><h3>Healthcare</h3></a></li>
@@ -122,10 +218,10 @@
 										<li><a href="#"><img src="img/dummy15.png" alt="dummy"><h3>Misc</h3></a></li>
 										<li class="title-box">
 											<a href="#grid"><h2>Back to Top</h2>
-										</li>
+										</li>					
 									</ul>
 								</section>
-
+							
 						</div><!-- /main -->
 						<div class="md-overlay"></div><!-- the overlay element -->
 					</div><!-- /st-content-inner -->
@@ -154,6 +250,15 @@
 		</script>
 		<script src="js/cssParser.js"></script>
 		<script src="js/css-filters-polyfill.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			$('[class^="question"]').on('click', function(e){
+		    e.preventDefault();
+		    var numb = this.className.replace('question', '');
+		    $('[id^="answer"]').hide();
+		    $('#answer' + numb).show();
+		});
+		</script>
 		<script>
 			(function() {
 				[].slice.call( document.querySelectorAll( '.checkout' ) ).forEach( function( el ) {
@@ -172,6 +277,30 @@
 					} );
 				} );
 			})();
+		</script>
+		<script>
+		var i = 1;
+			$('.progress .circle').removeClass().addClass('circle');
+			$('.progress .bar').removeClass().addClass('bar');
+			setInterval(function() {
+			  $('.progress .circle:nth-of-type(' + i + ')').addClass('active');
+			  
+			  $('.progress .circle:nth-of-type(' + (i-1) + ')').removeClass('active').addClass('done');
+			  
+			  $('.progress .circle:nth-of-type(' + (i-1) + ') .label').html('&#10003;');
+			  
+			  $('.progress .bar:nth-of-type(' + (i-1) + ')').addClass('active');
+			  
+			  $('.progress .bar:nth-of-type(' + (i-2) + ')').removeClass('active').addClass('done');
+			  
+				// i++;
+
+			  if (i==0) {
+			    $('.progress .bar').removeClass().addClass('bar');
+			    $('.progress div.circle').removeClass().addClass('circle');
+			    i = 1;
+			  }
+			}, 1000);
 		</script>
 	</body>
 </html>
